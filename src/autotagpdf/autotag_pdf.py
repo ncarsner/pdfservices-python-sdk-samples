@@ -9,6 +9,7 @@
 import logging
 import os
 from datetime import datetime
+import json
 
 from adobe.pdfservices.operation.auth.service_principal_credentials import ServicePrincipalCredentials
 from adobe.pdfservices.operation.exception.exceptions import ServiceApiException, ServiceUsageException, SdkException
@@ -35,10 +36,18 @@ class AutoTagPDF:
             input_stream = file.read()
             file.close()
 
+            config_path = "./pdfservices-api-credentials.json"
+            with open(config_path, "r") as config_file:
+                config = json.load(config_file)
+
             # Initial setup, create credentials instance
             credentials = ServicePrincipalCredentials(
-                client_id=os.getenv('PDF_SERVICES_CLIENT_ID'),
-                client_secret=os.getenv('PDF_SERVICES_CLIENT_SECRET')
+                # client_id=os.getenv('PDF_SERVICES_CLIENT_ID'),
+                # client_secret=os.getenv('PDF_SERVICES_CLIENT_SECRET')
+
+                client_id=config["client_credentials"]["client_id"],
+                client_secret=config["client_credentials"]["client_secret"]
+
             )
 
             # Creates a PDF Services instance
