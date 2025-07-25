@@ -47,7 +47,6 @@ class AutoTagPDF:
 
                 client_id=config["client_credentials"]["client_id"],
                 client_secret=config["client_credentials"]["client_secret"]
-
             )
 
             # Creates a PDF Services instance
@@ -83,6 +82,7 @@ class AutoTagPDF:
         time_stamp = now.strftime("%Y-%m-%dT%H-%M-%S")
         os.makedirs("output/AutotagPDF", exist_ok=True)
         return f"output/AutotagPDF/autotag-tagged{time_stamp}.pdf"
+
 
 
 if __name__ == "__main__":
