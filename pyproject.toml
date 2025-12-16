@@ -1,0 +1,7 @@
+[project]
+name = "pdfservices-python-sdk-samples"
+version = "0.1.0"
+description = "Adobe PDF Python SDK services"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
