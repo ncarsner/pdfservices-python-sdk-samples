@@ -326,14 +326,15 @@ def main():
     # ============================================================================
     
     # Directory containing PDF files to process
-    INPUT_DIRECTORY = "src/resources"
+    # INPUT_DIRECTORY = "src/resources"
+    INPUT_DIRECTORY = Path(r'C:\Users\Directory')
     
     # Directory to save processed files and reports
-    OUTPUT_DIRECTORY = "./output"
+    OUTPUT_DIRECTORY = Path(r"C:\Users\Directory\output")
     
     # Path to Adobe PDF Services credentials file
     CREDENTIALS_PATH = "./pdfservices-api-credentials.json"
-    
+
     # Skip initial accessibility check before auto-tagging (saves API calls)
     # Set to True to save API usage, False to run full pre/post comparison
     SKIP_INITIAL_CHECK = False
